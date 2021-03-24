@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+from readFasta import read_fasta
+
+def forward_reading(seq, reader_choice):
+    # print(seq)
+    # reader 1
+    reader1 = [seq[i:i+3] for i in range(0, len(seq), 3)]
+    # reader 2
+    reader2 = [seq[i:i+3]  for i in range(1, len(seq), 3)]
+    reader2.insert(0,seq[0])
+    # reader 3
+    reader3 = [seq[i:i+3] for i in range(2, len(seq), 3)]
+    reader3.insert(0,seq[0:2])
+    if reader_choice == 1:
+        return reader1
+    elif reader_choice == 2:
+        return reader2
+    elif reader_choice == 3:
+        return reader3

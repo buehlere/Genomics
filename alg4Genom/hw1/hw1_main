@@ -1,0 +1,8 @@
+
+
+def naive_with_rc(p,t):
+    frwd = naive(p,t)
+    rev = naive(reverseComplement(p),t)
+    matches = frwd + rev
+    matches = list(set(matches))
+    return matches
